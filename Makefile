@@ -13,10 +13,10 @@ OBJECTSC   = $(SOURCESC:.c=.o)
 
 
 #all: 
-all: template
+all: template ptr
 
 #SRCDIRS	:= 
-SRCDIRS	:= study_template
+SRCDIRS	:= study_template study_ptr
 
 include $(SRCDIRS:%=%/Module.mk)
 
@@ -27,5 +27,5 @@ include $(SRCDIRS:%=%/Module.mk)
 
 clean:
 	rm -rf $(SRCDIRS:%=%/*.o)
-	rm -rf ./*.o $(SRCDIRS)/*.o
-	rm -rf template
+	rm -rf ./*.o
+	rm -rf template ptr
