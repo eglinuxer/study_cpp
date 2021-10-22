@@ -1,0 +1,13 @@
+prefix=@CMAKE_INSTALL_PREFIX@
+exec_prefix=${prefix}
+includedir=${prefix}/include
+libdir=${exec_prefix}/@CMAKE_INSTALL_LIBDIR@
+
+Name: lib@PROJECT_NAME@
+Description: eglinux's cpp study.
+URL: https://github.com/eglinuxer/@PROJECT_NAME@
+Version: @STUDY_CPP_VERSION@
+CFlags: -I${includedir} @PKG_CONFIG_DEFINES@
+Libs: -L${libdir} -lstudy_cpp
+Requires: @PKG_CONFIG_REQUIRES@
+

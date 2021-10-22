@@ -1,18 +1,41 @@
 {
     "tasks": [
         {
-            "type": "shell",
-            "label": "g++ build active file",
-            "command": "make clean;make",
-            "args": [
-                // "-g",
-                // "${file}",
-                // "-o",
-                // "${workspaceFolder}"
-            ],
             "options": {
-                "cwd": "${workspaceFolder}"
-            }
+                "cwd": "${workspaceFolder}/build"
+            },
+            "type": "cppbuild",
+            "label": "cmake",
+            "command": "/usr/bin/cmake",
+            "args": [
+                "-DCMAKE_BUILD_TYPE=Debug",
+                ".."
+            ]
+        },
+        {
+            "options": {
+                "cwd": "${workspaceFolder}/build"
+            },
+            "label": "make",
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            },
+            "command": "make",
+            "args": [
+                "-j4"
+            ]
+        },
+        {
+            "options": {
+                "cwd": "${workspaceFolder}/build"
+            },
+            "label": "build",
+            "dependsOrder": "sequence",
+            "dependsOn":[
+                "cmake",
+                "make"
+            ]
         }
     ],
     "version": "2.0.0"
