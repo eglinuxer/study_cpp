@@ -144,7 +144,7 @@ endif()
 # ---------------------------------------------------------------------------------------
 # Install
 # ---------------------------------------------------------------------------------------
-set(CMAKE_INSTALL_PREFIX ${CMAKE_SOURCE_DIR}/build_3rd)
+# set(CMAKE_INSTALL_PREFIX ${CMAKE_SOURCE_DIR}/build_3rd)
 if(STUDY_CPP_INSTALL)
     message(STATUS "Generating install")
     set(project_config_in "${CMAKE_CURRENT_LIST_DIR}/cmake/studyCppConfig.cmake.in")
